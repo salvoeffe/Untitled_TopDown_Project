@@ -10,6 +10,7 @@ public class PickableItem : MonoBehaviour
     public void PickUpItem()
     {
         Inventory.i.Add(itemData);
+        Inventory.i.RefreshInventory();
         SoundManager.i.PlaySound(pickUpItemSFX);
         Destroy(gameObject);
     }

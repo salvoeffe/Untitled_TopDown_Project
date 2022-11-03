@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HolyGrail
   m_EditorClassIdentifier: 
   itemName: Holy Grail
-  itemIcon: {fileID: 21300000, guid: ffa543ce3e2da47ee8b67ddb8a8564f9, type: 3}
+  itemIcon: {fileID: 21300000, guid: 591efab61b7e84282b0aafcee924b898, type: 3}
   canBeSold: 1
   marketValue: 150

@@ -20,6 +20,6 @@ public class MoneyManager : MonoBehaviour
     {
         currentMoney += moneyToAdd;
         moneyText.text = currentMoney.ToString();
-        moneyAnim.SetTrigger("MoneyPicked");
+        moneyAnim.SetTrigger("PlayEffect");
     }
 }
