@@ -22,4 +22,16 @@ public class MoneyManager : MonoBehaviour
         moneyText.text = currentMoney.ToString();
         moneyAnim.SetTrigger("PlayEffect");
     }
+
+    public void RemoveMoney(int moneyToRemove)
+    {
+        currentMoney -= moneyToRemove;
+        moneyText.text = currentMoney.ToString();
+        moneyAnim.SetTrigger("PlayEffect");
+    }
+
+    public int GetCurrentMoney()
+    {
+        return currentMoney;
+    }
 }

@@ -18,8 +18,11 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] PlayerMovement playerMovement;
     GameObject currentNPCcam;
+    [SerializeField] GameObject gameUI_GO;
 
     [SerializeField] AudioClip talkingSFX;
+
+    bool isTalkingWithShopkeeper = false;
 
     void Update()
     {
@@ -39,17 +42,24 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string[] lines, string npcName, GameObject npcCam)
+    public void StartDialogue(NPC npc)
     {
         isTalking = true;
         dialogueBoxGO.SetActive(true);
+        gameUI_GO.SetActive(false);
         dialogueText.text = string.Empty;
-        npcNameText.text = npcName;
-        dialogueLines = lines;
+        npcNameText.text = npc.npcName;
+
+        if(npc.isShopkeeper)
+        {
+            isTalkingWithShopkeeper = true;
+        }
+
+        dialogueLines = npc.dialogLines;
         index = 0;
         StartCoroutine(TypeLine());
 
-        currentNPCcam = npcCam;
+        currentNPCcam = npc.npcCam;
     }
 
     IEnumerator TypeLine()
@@ -82,15 +92,33 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            TryToEndDialogue();
+        }
+    }
+
+    private void TryToEndDialogue()
+    {
+        dialogueBoxGO.SetActive(false);
+
+        if (isTalkingWithShopkeeper)
+        {
+            ShoppingManager.i.ShowShoppingChoices();
+            isTalkingWithShopkeeper = false;
+        }
+        else
+        {
             EndDialogue();
         }
+
+        isTalking = false;
+
     }
 
     private void EndDialogue()
     {
-        dialogueBoxGO.SetActive(false);
         playerMovement.SetCanMove(true);
         currentNPCcam.SetActive(false);
-        isTalking = false;
+
+        gameUI_GO.SetActive(true);
     }
 }

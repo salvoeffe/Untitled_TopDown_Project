@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0536052f743a498e8ef138d05a3ce84, type: 3}
-  m_Name: HolyGrail
+  m_Name: Jacket_3
   m_EditorClassIdentifier: 
-  itemName: Holy Grail
-  itemIcon: {fileID: 21300000, guid: 591efab61b7e84282b0aafcee924b898, type: 3}
-  canBeSoldByPlayer: 1
-  marketValue: 150
+  itemName: Yellow Jacket
+  itemIcon: {fileID: 21300000, guid: ab1fef79dd4ba47949a8649806de41f1, type: 3}
+  canBeSoldByPlayer: 0
+  marketValue: 400

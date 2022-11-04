@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DollarBill : MonoBehaviour
 {
-    int dollarBillWorth = 10;
+    int dollarBillWorth = 20;
     [SerializeField] AudioClip moneyPickedSFX;
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    [SerializeField] string npcName;
+    public string npcName;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] float talkingDistance = 18f;
-    [SerializeField] GameObject npcCam;
+    public GameObject npcCam;
     [SerializeField] DialogueManager dialogueManager;
 
-    [SerializeField] string[] testDialogLines;
+    [TextArea(3, 6)]
+    public string[] dialogLines;
+
+    public bool isShopkeeper = false;
 
     public void TalkWithPlayer()
     { 
-        /*  0. Move Camera to desired spot with CM
-         *  1. Make player reach nearest talking spot
-         *  2. Start the Right Dialogue
-         *  4. When Dialogue is over make player move again */
-
         npcCam.SetActive(true);
 
         MakePlayerMoveToDesiredPos();
 
-        //should choose correct dialogue lines
-        dialogueManager.StartDialogue(testDialogLines, npcName, npcCam);
+        //if there are more dialogue lines, you should choose the correct ones to display.
+        dialogueManager.StartDialogue(this);
 
     }
 

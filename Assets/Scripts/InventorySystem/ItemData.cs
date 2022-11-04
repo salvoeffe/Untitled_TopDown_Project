@@ -7,6 +7,6 @@ public class ItemData : ScriptableObject
 {
     public string itemName;
     public Sprite itemIcon;
-    public bool canBeSold = false;
+    public bool canBeSoldByPlayer = false;
     public int marketValue = 0;
 }
