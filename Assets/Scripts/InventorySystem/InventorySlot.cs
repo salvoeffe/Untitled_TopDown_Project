@@ -22,8 +22,12 @@ public class InventorySlot : MonoBehaviour
         itemNameText.text = itemData.itemName;
     }
 
-    public void TradeThisItem()
+    public void TradeOrWearThisItem()
     {
+        if (thisItem.itemData.isHat || thisItem.itemData.isJacket)
+        {
+            PlayerClothing.i.WearItem(thisItem);
+        }
         ShoppingManager.i.TradeItem(thisItem, isInShopInventory);
     }
 }

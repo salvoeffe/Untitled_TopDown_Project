@@ -565,7 +565,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1927900305}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
-        m_MethodName: TradeThisItem
+        m_MethodName: TradeOrWearThisItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

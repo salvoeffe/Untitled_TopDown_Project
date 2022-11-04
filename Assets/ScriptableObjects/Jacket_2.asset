@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: Winter Jacket
   itemIcon: {fileID: 21300000, guid: 2b68a49601f9542d2a1e75c49c0d9a79, type: 3}
   canBeSoldByPlayer: 0
+  isHat: 0
+  isJacket: 1
   marketValue: 200

@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: Red Jacket
   itemIcon: {fileID: 21300000, guid: b4f1be207860649ff9625429905812fa, type: 3}
   canBeSoldByPlayer: 0
+  isHat: 0
+  isJacket: 1
   marketValue: 50
